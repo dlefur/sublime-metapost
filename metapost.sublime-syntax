@@ -1,0 +1,45 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - mp
+scope: text.metapost
+contexts:
+  main:
+    # Strings begin and end with quotes, and use backslashes as an escape
+    # character
+    - match: '"'
+      scope: punctuation.definition.string.begin.metapost
+      push: double_quoted_string
+
+    # Comments begin with a '//' and finish at the end of the line
+    - match: '%'
+      scope: punctuation.definition.comment.metapost
+      push: line_comment
+
+    # Keywords are if, else for and while.
+    # Note that blackslashes don't need to be escaped within single quoted
+    # strings in YAML. When using single quoted strings, only single quotes
+    # need to be escaped: this is done by using two single quotes next to each
+    # other.
+
+
+    - match: '\b(if|else|for|while|abs|addto|also|contour|doublepath|ahangle|ahlength|and|angle|arclength|arctime of|background|bbox|bboxmargin|beginfig|begingroup|beveled|black|blue|bluepart|boolean|bot|boxit|boxjoin|bp|bpath|btex|buildcycle|butt|ceiling|center|char|charcode|circleit|circmargin|clip to|color|controls|cosd|curl|currentpen|currentpicture|cutafter|cutbefore|cutdraw|cuttings|cycle|dashed|decimal|decr|def|defaultdx|defaultdy|defaultfont|defaultpen|defaultscale|dir|directionpoint of|directiontime of|dotlabel|dotlabels|dotprod|down|downto|draw|draw_mark|draw_marked|drawarrow|drawboxed|drawdblarrow|drawoptions|drawshadowed|drawunboxed|dvips|else|elseif|end|enddef|endfig|endfor|endgroup|epsfbox|epsilon|etex|evenly|exitif|exitunless|extra_endfig|extra_beginfig|false|fi|fill|filldraw|fixpos|fixsize|floor|fontsize|for|forever|forsuffixes|fullcircle|getmid|green|greenpart|halcircle|hex|hide|identity|if|in|incr|infinity|infont|input|interim|intersectionpoint|intersectiontimes|inverse|joinup|known|label|labeloffset|labels|left|length|let|lft|linecap|linejoin|llcorner|llft|logginall|lrcorner|lrt|makepath|makepen|mark_angle|draw_rt_angle|max|mexp|mfpictures|mfplain|middlepoint|midpoint|min|mitered|miterlimit|mlog|mm|mod|month|mpxbreak|newinternal|normaldeviate|not|nullpicture|numeric|oct|odd|off|on|or|origin|pair|path|pausing|pc|pen|pencircle|penoffset|pensquare|pic|pickup|picture|point of|precontrol|primary|primarydef|prologues|pt|quartercircle|red|redpart|reflectedabout|reverse|right|rotated|round|rounded|rt|save|scaled|secondarydef|self|setbounds|shifted|shipout|show|showdependencies|showstopping|sind|slanted|special|sqrt|squared|step|str|string|subpath of|substring of|suffix|tension|tertiarydef|text|thelabel|time|top|tracingall|tracingcapsules|tracingchoices|tracingcommands|tracingequations|tracinglostchars|tracingmacros|tracingnone|tracingonline|tracingoutput|tracingrestores|tracingspecs|tracingstats|tracingtitles|transform|transformed|true|truecorner|ulcorner|ulft|undraw|unfill|unfilldraw|uniformdeviate|unitsquare|unitvector|unknown|untill|up|upto|urcorner|urt|vardef|verbatimtex|warningcheck|whatever|white|withcolor|withdots|withpen|xpart|xscaled|xxpart|xypart|year|ypart|yscaled|yxpart|yypart|zscaled)\b'
+      scope: keyword.control.metapost
+
+    # Numbers
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.metapost
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.metapost
+    - match: '\\.'
+      scope: constant.character.escape.metapost
+    - match: '"'
+      scope: punctuation.definition.string.end.metapost
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.metapost
+    - match: $
+      pop: true
