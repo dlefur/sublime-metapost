@@ -1,0 +1,82 @@
+#!/bin/sh
+
+
+# Copyright (C) 2009
+# Author: Philippe IVALDI
+# http://www.piprime.fr/
+#
+# This program is free software ; you can redistribute it and/or modify
+# it under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation ; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY ; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with this program ; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+
+# Thank to Stephane Chazelas for his help on function sortByExtension.
+#--------------------------------------------------------------------------
+#fonction de visualisation des images
+
+#-------------------------- solution avec awk
+sortByByExtension()
+{
+    awk '
+  match($0, /.*\./) {
+    $0 = substr($0, RLENGTH+1) "." substr($0,1,RLENGTH-1)
+  }
+  {print}' | sort -t. -k2 -k1,1n | awk '
+  match($0, /\./) {
+    $0 = substr($0, RSTART+1) "." substr($0,1,RSTART-1)
+  }
+  {print}'
+}
+#---------------------------- solution avec sed
+sortByExtension() 
+{
+  rm mproof.pdf
+	sed 's/	/__TrUc@BiDuLe@ChOuEtTe__/g' | \
+	sed 's/\(.*\)\.\([^.]*$\)/\1	\2/' | sort -nk2 | \
+	sed 's/	/./g' | \
+	sed 's/__TrUc@BiDuLe@ChOuEtTe__/	/g'
+}
+
+
+visualisation()
+{
+    rm mproof.pdf
+    find ./ -maxdepth 1 -type f -regex "\./${1}\.[0-9]+" | \
+        sortByExtension | xargs tex mproof
+    dvips -ta4 mproof.dvi -o && ps2pdf mproof.ps && evince mproof.pdf &
+}
+#--------------------------------------------------------------------------
+
+
+#nomfichier : nom du fichier
+
+nomfichier=$1
+
+
+#base : nom sans extension
+base=${nomfichier%.*}
+
+#ext : extension du fichier 
+ext=`echo $nomfichier |cut -f2 -d.`
+
+# test
+#------------------------- si fichier mp, compilation
+if test $ext = "mp" ; then 
+   mpost "$nomfichier" && visualisation $base || gedit +"$(grep -n '^l\.' "$base.log"|sed -n '1p' | cut -d':' -f1)" "$base.log"
+#------------------------- si fichier log, retour au fichier mp
+elif test $ext = "log" ; then 
+   gedit +"$(grep  '^l\.'  "$base.log"|sed -n '1p' | cut -d' ' -f1 | sed 's/.\{2\}//')" "$base.mp"
+else
+#-------------------------- rien
+   echo "F12 nécessite un fichier mp ou log !"
+fi
+
