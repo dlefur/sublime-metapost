@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+milieu(A,B);
+]]></content>
+	<tabTrigger>milieu</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

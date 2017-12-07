@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+segment(A,B);
+]]></content>
+	<tabTrigger>segment</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+CentreCercleC(A,B,C); % centre du cercle circonscrit
+]]></content>
+	<tabTrigger>centrecerclec</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

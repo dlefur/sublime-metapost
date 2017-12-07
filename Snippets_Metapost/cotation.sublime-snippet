@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+trace cotation(A,B,ec,dec,TEX("\$ \$")); % Trace une fleche de cotation du segment [AB] décalee de ec ; nommee, sur le dessus, par le texte decale de dec.
+]]></content>
+	<tabTrigger>cotation</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

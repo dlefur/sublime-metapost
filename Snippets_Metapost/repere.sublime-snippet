@@ -1,0 +1,43 @@
+<snippet>
+	<content><![CDATA[
+%-------------------------------------------------------------------------
+% Figure 
+%------------------------------------------------------------------------
+pair O;
+O:=(0,0);
+numeric xmin,xmax,ymin,ymax;
+xmin:=-10;
+xmax:=10;
+ymin:=-10;
+ymax:=10;
+
+u:=1cm;
+figure( xmin*u,ymin*u,xmax*u,ymax*u);
+
+color couleur;
+couleur:=gris_VIII;
+
+%----------lignes verticales
+for i:=xmin upto xmax :
+   draw (i*u,ymin*u)--(i*u,ymax*u) dashed evenly withcolor couleur;
+endfor;
+%----------lignes horizontales
+for i:=ymin upto ymax :
+   draw (xmin*u,i*u)--(xmax*u,i*u) dashed evenly withcolor couleur;
+endfor;  
+
+draw (xmin*u,0)--(xmax*u,0);
+draw (0,ymin*u)--(0,ymax*u);
+drawarrow O--(u,0);
+drawarrow O--(0,u);
+label.llft(TEX("$ O $"),O);
+label.bot(TEX("$\overrightarrow{i}$"),(0.5u,0));
+label.lft(TEX("$\overrightarrow{j}$"),(0,0.5u));
+
+fin;
+%-----------------------------------------------------------------------
+
+]]></content>
+	<tabTrigger>repere</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

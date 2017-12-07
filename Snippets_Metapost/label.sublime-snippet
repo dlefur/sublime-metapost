@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+label.${1:bot}(TEX("\$ $2 \$"),$3);
+]]></content>
+	<tabTrigger>label</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

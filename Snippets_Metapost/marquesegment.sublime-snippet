@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+trace marquesegment(A,B);
+]]></content>
+	<tabTrigger>marquesegment</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

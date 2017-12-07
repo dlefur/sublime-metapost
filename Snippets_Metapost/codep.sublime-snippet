@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+trace codeperp(A,B,C,5);
+]]></content>
+	<tabTrigger>codep</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

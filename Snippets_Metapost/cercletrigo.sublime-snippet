@@ -1,0 +1,53 @@
+<snippet>
+	<content><![CDATA[
+%-------------------------------------------------------------------------
+% Cercle trigo 
+%------------------------------------------------------------------------
+u:=5cm;
+figure (-1.5u,-1.5u,1.5u,1.5u);
+
+pair O,I,J,II,JJ;
+O:=(0,0);
+I:=(u,0);
+II:=(-u,0);
+J:=(0,u);
+JJ:=(0,-u);
+
+trace (-1.2u,0)--(1.2u,0);
+trace (0,-1.2u)--(0,1.2u);
+trace cercles(O,u);
+
+pair A,B,C,D,E,F,G,H,K,L,M,N,P;
+
+A:=rotation(I,O,30);
+B:=rotation(I,O,45);
+C:=rotation(I,O,60);
+
+D:=rotation(I,O,120);
+E:=rotation(I,O,135);
+F:=rotation(I,O,150);
+
+G:=rotation(I,O,210);
+H:=rotation(I,O,225);
+K:=rotation(I,O,240);
+
+M:=rotation(I,O,300);
+N:=rotation(I,O,315);
+P:=rotation(I,O,330);
+
+trace C--M;
+trace D--K;
+
+trace A--F;
+trace G--P;
+
+trace B--H;
+trace E--N;
+
+fin;
+%-----------------------------------------------------------------------
+
+]]></content>
+	<tabTrigger>cercletrigo</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

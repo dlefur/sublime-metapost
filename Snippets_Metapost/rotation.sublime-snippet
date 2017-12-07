@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+rotation(A,B,ang); image de A par la rotation de centre B et d'angle ang
+]]></content>
+	<tabTrigger>rotation</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

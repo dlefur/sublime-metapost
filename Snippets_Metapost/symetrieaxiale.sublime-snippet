@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+symetrie(A,B,C); image de A par la symetrie d'axe (BC)
+]]></content>
+	<tabTrigger>symetrieaxiale</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

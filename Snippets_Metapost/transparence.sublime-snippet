@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+fillcolor:=orange;
+transparence ${1:cc}; % remplit le chemin ferme	
+
+]]></content>
+	<tabTrigger>transparence</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

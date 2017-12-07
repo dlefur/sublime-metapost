@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+bissectrice(A,B,C);
+]]></content>
+	<tabTrigger>bissectrice</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

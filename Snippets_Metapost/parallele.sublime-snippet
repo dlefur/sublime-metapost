@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+parallele(A,B,C);  % parallele a (AB) passant par C
+]]></content>
+	<tabTrigger>parallele</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

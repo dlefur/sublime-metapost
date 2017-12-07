@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+trace coupdecompas(A,B,n); % centre A passant par B d'angle +-n	
+]]></content>
+	<tabTrigger>coupdecompas</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

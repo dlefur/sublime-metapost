@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+marque_p:="croix";
+MarquePoint($1);
+marque_p:="";
+
+]]></content>
+	<tabTrigger>marquep</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

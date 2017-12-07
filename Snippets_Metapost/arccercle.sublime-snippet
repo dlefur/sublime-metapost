@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+arccercle(A,B,O); % de centre O
+]]></content>
+	<tabTrigger>arccercle</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

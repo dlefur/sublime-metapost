@@ -1,0 +1,63 @@
+<snippet>
+	<content><![CDATA[
+%------------------------------------------------------------------------
+% Figure $1 : triangle 1
+%------------------------------------------------------------------------
+
+u:=1cm;
+figure(-8u,-8u,10u,8u);
+
+pair A,D,E;
+
+A:=(0,0);
+D:=(0,4u);
+E:=(2u,4u);
+
+trace segment(A,E) withcolor rouge withpen pencircle scaled 1.5;
+trace segment(A,D) withcolor vert withpen pencircle scaled 1.5;
+trace segment(D,E) withcolor bleu withpen pencircle scaled 1.5;
+
+trace codeperp(A,D,E,5);
+
+trace marqueangle(D,E,A,2);
+
+
+nomme.bot(A);
+nomme.top(D);
+nomme.top(E);
+
+fin;
+%-----------------------------------------------------------------------
+
+%------------------------------------------------------------------------
+% Figure $2 : triangle 2
+%------------------------------------------------------------------------
+
+u:=1cm;
+figure(-8u,-8u,10u,8u);
+
+pair C,D,B;
+
+D:=(0,0);
+C:=(0,u);
+B:=(8u,-4u);
+
+trace segment(D,B) withcolor rouge withpen pencircle scaled 1.5;
+trace segment(D,C) withcolor vert withpen pencircle scaled 1.5;
+trace segment(B,C) withcolor bleu withpen pencircle scaled 1.5;
+
+trace codeperp(B,C,D,5);
+
+trace marqueangle(C,B,D,2);
+
+nomme.bot(B);
+nomme.top(D);
+nomme.top(C);
+
+fin;
+%-----------------------------------------------------------------------
+
+]]></content>
+	<tabTrigger>semblable</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+pointarc(cc,ang); % cercle cc et angle de reference ang
+]]></content>
+	<tabTrigger>pointarc</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>

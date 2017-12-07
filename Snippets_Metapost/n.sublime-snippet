@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[
+nomme.$1($2);
+$0
+]]></content>
+	<tabTrigger>n</tabTrigger>
+	<scope>text.metapost</scope>
+</snippet>
