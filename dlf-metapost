@@ -71,12 +71,6 @@ ext=`echo $nomfichier |cut -f2 -d.`
 # test
 #------------------------- si fichier mp, compilation
 if test $ext = "mp" ; then 
-   mpost "$nomfichier" && visualisation $base || gedit +"$(grep -n '^l\.' "$base.log"|sed -n '1p' | cut -d':' -f1)" "$base.log"
-#------------------------- si fichier log, retour au fichier mp
-elif test $ext = "log" ; then 
-   gedit +"$(grep  '^l\.'  "$base.log"|sed -n '1p' | cut -d' ' -f1 | sed 's/.\{2\}//')" "$base.mp"
-else
-#-------------------------- rien
-   echo "F12 nécessite un fichier mp ou log !"
+   mpost "$nomfichier" && visualisation $base || /snap/subl "$base.log"
 fi
 
