@@ -1,5 +1,5 @@
 {
-    "cmd": ["/home/dlefur/.config/sublime-text-3/Packages/User/./dlf-metapost", "$file"],
+    "cmd": ["/home/dlefur/.config/sublime-text/Packages/User/./dlf-metapost", "$file"],
     "path": "/usr/bin",
     "selector": "text.metapost"
 }
